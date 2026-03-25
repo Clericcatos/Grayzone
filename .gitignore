@@ -1,32 +1,88 @@
-# Prerequisites
-*.d
+ # Unity generated folders
+  [Ll]ibrary/
+  [Tt]emp/
+  [Oo]bj/
+  [Bb]uild/
+  [Bb]uilds/
+  [Ll]ogs/
+  [Uu]ser[Ss]ettings/
+  MemoryCaptures/
+  Recordings/
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+  # Asset Store tools
+  [Aa]ssets/AssetStoreTools*
 
-# Precompiled Headers
-*.gch
-*.pch
+  # Auto-generated VS / Rider / MonoDevelop files
+  .vs/
+  .idea/
+  .gradle/
+  ExportedObj/
+  .consulo/
+  *.csproj
+  *.unityproj
+  *.sln
+  *.suo
+  *.tmp
+  *.user
+  *.userprefs
+  *.pidb
+  *.booproj
+  *.svd
+  *.pdb
+  *.mdb
+  *.opendb
+  *.VC.db
+  *.pidb.meta
+  *.pdb.meta
+  *.mdb.meta
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+  # Unity3D generated meta files for IDE projects
+  *.csproj.meta
+  *.unityproj.meta
+  *.sln.meta
 
-# Fortran module files
-*.mod
-*.smod
+  # OS generated files
+  .DS_Store
+  .DS_Store?
+  ._*
+  .Spotlight-V100
+  .Trashes
+  ehthumbs.db
+  Thumbs.db
+  desktop.ini
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+  # Crash reports
+  sysinfo.txt
 
-# Executables
-*.exe
-*.out
-*.app
+  # Build outputs / binaries
+  *.apk
+  *.aab
+  *.unitypackage
+  *.app
+  *.exe
+  *.out
+  *.dll
+  *.so
+  *.dylib
+  *.lib
+  *.a
+  *.obj
+  *.o
+
+  # Addressables / cache
+  [Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+  [Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/Android/*
+  [Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/iOS/*
+  [Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/WebGL/*
+
+  # JetBrains Rider
+  .idea/
+
+  # Visual Studio Code
+  .vscode/
+
+  # Generated test results
+  TestResults/
+
+  # Optional: local package tarballs
+  *.tgz
