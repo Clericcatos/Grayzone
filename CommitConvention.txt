@@ -8,4 +8,4 @@ Art | 그래픽 리소스 변경
 Sound | 사운드 리소스 변경
 Level | 맵/씬 변경
 Balance | 수치 밸런스 조정
-Ui | UI 변경
+UI | UI 변경
