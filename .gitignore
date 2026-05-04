@@ -1,88 +1,113 @@
- # Unity generated folders
-  [Ll]ibrary/
-  [Tt]emp/
-  [Oo]bj/
-  [Bb]uild/
-  [Bb]uilds/
-  [Ll]ogs/
-  [Uu]ser[Ss]ettings/
-  MemoryCaptures/
-  Recordings/
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+MemoryCaptures/
+Recordings/
 
-  # Asset Store tools
-  [Aa]ssets/AssetStoreTools*
+# Unity generated folders under nested Projects/*
+Projects/*/[Ll]ibrary/
+Projects/*/[Tt]emp/
+Projects/*/[Oo]bj/
+Projects/*/[Bb]uild/
+Projects/*/[Bb]uilds/
+Projects/*/[Ll]ogs/
+Projects/*/[Uu]ser[Ss]ettings/
+Projects/*/MemoryCaptures/
+Projects/*/Recordings/
 
-  # Auto-generated VS / Rider / MonoDevelop files
-  .vs/
-  .idea/
-  .gradle/
-  ExportedObj/
-  .consulo/
-  *.csproj
-  *.unityproj
-  *.sln
-  *.suo
-  *.tmp
-  *.user
-  *.userprefs
-  *.pidb
-  *.booproj
-  *.svd
-  *.pdb
-  *.mdb
-  *.opendb
-  *.VC.db
-  *.pidb.meta
-  *.pdb.meta
-  *.mdb.meta
+# Unity package cache and local generated package artifacts
+Projects/*/[Ll]ibrary/[Pp]ackage[Cc]ache/
+Projects/*/[Ll]ibrary/[Pp]ackage[Mm]anager/
+*.tgz
 
-  # Unity3D generated meta files for IDE projects
-  *.csproj.meta
-  *.unityproj.meta
-  *.sln.meta
+# Keep Unity package manifests tracked
+!Projects/*/[Pp]ackages/
+!Projects/*/[Pp]ackages/manifest.json
+!Projects/*/[Pp]ackages/packages-lock.json
 
-  # OS generated files
-  .DS_Store
-  .DS_Store?
-  ._*
-  .Spotlight-V100
-  .Trashes
-  ehthumbs.db
-  Thumbs.db
-  desktop.ini
+# Asset Store tools
+[Aa]ssets/AssetStoreTools*
+Projects/*/[Aa]ssets/AssetStoreTools*
 
-  # Crash reports
-  sysinfo.txt
+# Auto-generated IDE files
+.vs/
+.idea/
+.gradle/
+.consulo/
+ExportedObj/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+*.csproj.meta
+*.unityproj.meta
+*.sln.meta
 
-  # Build outputs / binaries
-  *.apk
-  *.aab
-  *.unitypackage
-  *.app
-  *.exe
-  *.out
-  *.dll
-  *.so
-  *.dylib
-  *.lib
-  *.a
-  *.obj
-  *.o
+# Editor folders under nested Projects/*
+Projects/*/.vs/
+Projects/*/.idea/
+Projects/*/.gradle/
+Projects/*/.vscode/
 
-  # Addressables / cache
-  [Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
-  [Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/Android/*
-  [Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/iOS/*
-  [Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/WebGL/*
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
 
-  # JetBrains Rider
-  .idea/
+# Crash reports
+sysinfo.txt
 
-  # Visual Studio Code
-  .vscode/
+# Build outputs / binaries
+*.apk
+*.aab
+*.unitypackage
+*.app
+*.exe
+*.out
+*.dll
+*.so
+*.dylib
+*.lib
+*.a
+*.obj
+*.o
 
-  # Generated test results
-  TestResults/
+# Addressables / cache
+[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/Android/*
+[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/iOS/*
+[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/WebGL/*
+Projects/*/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+Projects/*/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/Android/*
+Projects/*/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/iOS/*
+Projects/*/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/WebGL/*
 
-  # Optional: local package tarballs
-  *.tgz
+# Visual Studio Code
+.vscode/
+
+# Generated test results
+TestResults/
+Projects/*/TestResults/
