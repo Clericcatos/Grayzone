@@ -3,18 +3,18 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NPCChar", menuName = "Scriptable Objects/NPCChar")]
 public class NPCChar : ScriptableObject
 {
-    [Min(1)] public int MaxHP;
+    [Min(1)] public int maxHP;
     public NPCType Type;
     public int likeability;
-    public NPCInjuryState Helath;
+    public NPCInjuryState Health;
 
     [field: SerializeField] public string DefinitionId { get; private set; }
-    [field: SerializeField] public string Prefap { get; private set; }
+    [field: SerializeField] public string Prefab { get; private set; }
 
-    public int MaxHp => Mathf.Max(1, MaxHP);
+    public int MaxHP => Mathf.Max(1, maxHP);
 
     private void OnValidate()
     {
-        MaxHP = Mathf.Max(1, MaxHP);
+        maxHP = Mathf.Max(1, maxHP);
     }
 }

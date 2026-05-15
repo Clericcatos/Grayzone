@@ -19,7 +19,7 @@ public class NPCRuntimeData
 
     public string DefinitionId => NPCData.DefinitionId;
 
-    public int MaxHp => NPCData != null ? NPCData.MaxHp : 1;
+    public int MaxHp => NPCData != null ? NPCData.maxHP : 1;
     public bool IsDead => CurrentHp <= 0;
 
 
