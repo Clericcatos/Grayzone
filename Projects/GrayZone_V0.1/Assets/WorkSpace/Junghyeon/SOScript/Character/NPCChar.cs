@@ -5,10 +5,10 @@ public class NPCChar : ScriptableObject
 {
     [Min(1)] public int MaxHP;
     public NPCType Type;
-     public int StartFatigue;
-     public int StartStress;
     public int likeability;
-    [field: SerializeField] public string ID { get; private set; }
+    public NPCInjuryState Helath;
+
+    [field: SerializeField] public string DefinitionId { get; private set; }
     [field: SerializeField] public string Prefap { get; private set; }
 
     public int MaxHp => Mathf.Max(1, MaxHP);
@@ -16,7 +16,5 @@ public class NPCChar : ScriptableObject
     private void OnValidate()
     {
         MaxHP = Mathf.Max(1, MaxHP);
-        StartFatigue = Mathf.Max(0, StartFatigue);
-        StartStress = Mathf.Max(0, StartStress);
     }
 }

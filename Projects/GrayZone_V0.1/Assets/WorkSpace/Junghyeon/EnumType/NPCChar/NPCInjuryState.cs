@@ -1,8 +1,10 @@
+using UnityEngine;
+
 public enum NPCInjuryState
 {
     Healthy,
-    Minor,
-    Major,
-    Critical,
-    Incapacitated
+    LightInjury,
+    HeavyInjury,
+    NearDeath,
+    Dead
 }

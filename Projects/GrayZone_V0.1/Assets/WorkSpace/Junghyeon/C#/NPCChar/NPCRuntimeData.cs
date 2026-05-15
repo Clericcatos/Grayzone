@@ -1,59 +1,59 @@
+using System;
 using UnityEngine;
 
+//ToDo : NPCRegistry 싱글톤 고려
 public class NPCRuntimeData
 {
     //ToDo : get Set 해놨는데 public으로 아래쪽에 함수 처리해둔거 맞는지
     //ToDo : 레벨시스템은 없지만 스태미나, 특수 능력치 향상 기능은 따로 필요한지
     public NPCChar NPCData { get; }
+
+    public string RuntimeId { get; }
     //public NPCInjuryState CurrentInjuryState { get; private set; }
-    public bool IsAssignedToShelter { get; private set; }
-    public string AssignedShelterId { get; private set; }
-    public string AssignedRoomId { get; private set; }
-    public int CurrentHp { get; private set; }
-    public int Fatigue { get; private set; }
-    public int Stress { get; private set; }
+    private bool IsAssignedToShelter { get; set; }
+    //private string AssignedShelterId { get; set; }
+    private string AssignedRoomId { get; set; }
+    private int CurrentHp { get; set; }
+
+    public int HealthPercent => MaxHp <= 0 ? 0 : CurrentHp * 100 / MaxHp;
+
+    public string DefinitionId => NPCData.DefinitionId;
 
     public int MaxHp => NPCData != null ? NPCData.MaxHp : 1;
     public bool IsDead => CurrentHp <= 0;
 
-    public NPCRuntimeData(NPCChar npcData)
-    {
-        if (npcData == null)
-        {
-            throw new System.ArgumentNullException(nameof(npcData));
-        }
 
-        NPCData = npcData;
+    //생성자
+    public NPCRuntimeData(NPCChar npcData, string runtimeId = null)
+    {
+        NPCData = npcData ?? throw new ArgumentNullException(nameof(npcData));
+        RuntimeId = string.IsNullOrWhiteSpace(runtimeId) ? npcData.DefinitionId : runtimeId;
         ResetToBaseState();
     }
 
+    //현재상태 갱신
     public void ResetToBaseState()
     {
         CurrentHp = MaxHp;
-        Fatigue = Mathf.Max(0, NPCData.StartFatigue);
-        Stress = Mathf.Max(0, NPCData.StartStress);
-        //CurrentInjuryState = NPCInjuryState.Healthy;
         ReleaseFromShelter();
+    }
+
+    //캐릭터 자신이 부상을 들고있는게 아니라 외부에서 요청시 자신의 상태를 던져주는 형태
+    public NPCInjuryState GetHealthState(NPCHealthRuleSO rule)
+    {
+        if (rule == null) throw new ArgumentNullException(nameof(rule));
+        return rule.Evaluate(CurrentHp, MaxHp);
     }
 
     //public NPCInjuryState GetCurrentInjuryState() => CurrentInjuryState;
     public bool GetIsAssignedToShelter() => IsAssignedToShelter;
-    public string GetAssignedShelterId() => AssignedShelterId;
+    //public string GetAssignedShelterId() => AssignedShelterId;
     public string GetAssignedRoomId() => AssignedRoomId;
     public int GetCurrentHp() => CurrentHp;
-    public int GetFatigue() => Fatigue;
-    public int GetStress() => Stress;
-
-    //public void SetInjuryState(NPCInjuryState injuryState)
-    //{
-    //    CurrentInjuryState = injuryState;
-    //}
 
 
     //ToDo : 셸터는 하나만 존재하는가? ( 하나만 존재하면 매개변수 하나 필요없음 )
     //룸에 들어가는 함수/ 이것도 필요한지 검토 필요
-    //-> NPC가 내가 어떤 룸에 들어갔는지 알아야 할 필요는 없음, 들어갔느냐만 중요
-    //어차피 어떤 NPC가 들어갔는지는 StaffRoster쪽에서 관리하기때문
     public bool AssignToShelter(string shelterId, string roomId)
     {
         if (string.IsNullOrWhiteSpace(shelterId) || string.IsNullOrWhiteSpace(roomId))
@@ -62,7 +62,7 @@ public class NPCRuntimeData
         }
 
         IsAssignedToShelter = true;
-        AssignedShelterId = shelterId.Trim();
+        //AssignedShelterId = shelterId.Trim();
         AssignedRoomId = roomId.Trim();
         return true;
     }
@@ -71,7 +71,7 @@ public class NPCRuntimeData
     public void ReleaseFromShelter()
     {
         IsAssignedToShelter = false;
-        AssignedShelterId = string.Empty;
+        //AssignedShelterId = string.Empty;
         AssignedRoomId = string.Empty;
     }
 
@@ -105,64 +105,4 @@ public class NPCRuntimeData
         return true;
     }
 
-    //피로 수치 설정
-    public void SetFatigue(int value)
-    {
-        Fatigue = Mathf.Max(0, value);
-    }
-
-
-    //피로 수치 증가
-    public bool IncreaseFatigue(int amount)
-    {
-        if (amount <= 0)
-        {
-            return false;
-        }
-
-        SetFatigue(Fatigue + amount);
-        return true;
-    }
-
-    // 피로 수치 감소
-    public bool RecoverFatigue(int amount)
-    {
-        if (amount <= 0)
-        {
-            return false;
-        }
-
-        SetFatigue(Fatigue - amount);
-        return true;
-    }
-
-    //스트레스 수치 설정
-    public void SetStress(int value)
-    {
-        Stress = Mathf.Max(0, value);
-    }
-
-    //스트레스 상승
-    public bool IncreaseStress(int amount)
-    {
-        if (amount <= 0)
-        {
-            return false;
-        }
-
-        SetStress(Stress + amount);
-        return true;
-    }
-
-    //스트레스 감소
-    public bool RecoverStress(int amount)
-    {
-        if (amount <= 0)
-        {
-            return false;
-        }
-
-        SetStress(Stress - amount);
-        return true;
-    }
 }
