@@ -1,0 +1,9 @@
+name,unity_x_m,unity_z_m,size_x_m,size_z_m,note
+Map,0,0,500,500,Plane scale 50 x 50 if Unity Plane is 10m x 10m
+Center Building,0,0,70,70,Main square building
+NW Quarter Building,-125,125,36,36,Center of northwest 250m x 250m quarter
+NE Quarter Building,125,125,36,36,Center of northeast 250m x 250m quarter
+SW Quarter Building,-125,-125,36,36,Center of southwest 250m x 250m quarter
+SE Quarter Building,125,-125,36,36,Center of southeast 250m x 250m quarter
+Vertical Road,0,0,18,500,North-south divider road
+Horizontal Road,0,0,500,18,East-west divider road
