@@ -105,4 +105,17 @@ public class NPCRuntimeData
         return true;
     }
 
+    public bool ReviveToPercent(int Percent)
+    {
+        if(Percent <= 0)
+        {
+            return false;
+        }
+
+        int healamount = MaxHp * Percent / 100;
+
+        SetCurrentHp(CurrentHp + healamount);
+        return true;
+    }
+
 }

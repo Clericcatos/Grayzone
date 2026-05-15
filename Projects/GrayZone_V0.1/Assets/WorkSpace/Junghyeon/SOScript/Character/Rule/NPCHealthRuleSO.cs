@@ -1,5 +1,7 @@
 using UnityEngine;
 
+
+// ToDo : Framework추가할때 SO가 아닌 내 자체 로직쪽으로 변경 필요
 [CreateAssetMenu(fileName = "NPCHealthRuleSO", menuName = "Scriptable Objects/NPCHealthRuleSO")]
 public class NPCHealthRuleSO : ScriptableObject
 {
